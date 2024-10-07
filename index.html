@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudia Juntos</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="icon" href="aprender-en-linea.png" type="image/x-icon">
+
+    <!-- Archivo CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="body-index">
+    <div id="header-placeholder"></div> <!-- Lugar donde se insertará el header -->
+
+
+    <div class="container-fluid">
+        <!-- Sección Proyectos -->
+        <section id="proyectos">
+            <h2 class="text-center">Proyectos en Curso</h2>
+            <p class="text-center">Aquí puedes ver los proyectos en los que están trabajando otros estudiantes y unirte
+                a ellos.</p>
+            <div class="text-center mb-4">
+                <button class="btn btn-primary" onclick="location.href='proyecto1.html'">Crear Proyecto</button>
+            </div>
+            <div class="row" id="proyectos-lista">
+                <!-- Lista de proyectos generada dinámicamente -->
+            </div>
+        </section>
+
+        <!-- Sección Recursos -->
+        <section id="recursos" class="mt-5">
+            <h2 class="text-center">Recursos Educativos</h2>
+            <p class="text-center">Comparte y descarga materiales útiles para tus estudios.</p>
+            <div class="text-center mb-4">
+                <button class="btn btn-primary" onclick="location.href='proyecto1.html'">Subir recursos</button>
+            </div>
+            <div class="row" id="recursos-lista">
+                <!-- Lista de recursos compartidos generada dinámicamente -->
+            </div>
+        </section>
+
+        <!-- Sección Foro -->
+        <section id="foro" class="mt-5">
+            <h2 class="text-center">Foro de Discusión</h2>
+            <p class="text-center">Participa en las discusiones sobre diversos temas educativos.</p>
+            <div class="mb-3">
+                <textarea class="form-control" id="mensaje-foro" rows="3"
+                    placeholder="Escribe tu mensaje aquí"></textarea>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-success" onclick="publicarMensaje()">Publicar</button>
+            </div>
+            <div id="foro-lista" class="mt-4">
+                <!-- Mensajes del foro generados dinámicamente -->
+            </div>
+        </section>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        });
+    </script>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Archivo JavaScript personalizado -->
+    <script src="script.js"></script>
+</body>
+
+</html>

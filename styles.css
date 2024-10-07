@@ -1,0 +1,82 @@
+body {
+    background-color: #f8f9fa;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+#proyectos-lista,
+#recursos-lista,
+#foro-lista {
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 40px;
+}
+
+.header-custom {
+    content: "";
+    position: relative;
+    /* Posiciona el pseudo-elemento de manera absoluta */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgb(156, 215, 247) 10%, rgb(0, 62, 150) 90%);
+    /* Cambia los colores según lo que necesites */
+    z-index: 0;
+    /* Asegura que el pseudo-elemento esté detrás del contenido */
+}
+
+.footer-custom {
+    content: "";
+    position: relative;
+    /* Posiciona el pseudo-elemento de manera absoluta */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgb(156, 215, 247) 10%, rgb(0, 62, 150) 90%);
+    /* Cambia los colores según lo que necesites */
+    z-index: 0;
+    /* Asegura que el pseudo-elemento esté detrás del contenido */
+}
+
+.body-proyecto1 {
+    background-color: #f8f9fa;
+    /* Color de fondo del cuerpo de la página de proyecto */
+    color: #212529;
+    /* Color de texto del cuerpo */
+}
+
+/* Estilo para el fondo desvanecido solo en la sección de proyectos */
+.container-fluid>section#proyectos {
+    position: relative;
+    /* Necesario para que el pseudo-elemento funcione correctamente */
+    overflow: hiddeauto;
+    /* Asegura que el fondo desvanecido no sobresalga del contenedor */
+}
+
+/* Agrega un pseudo-elemento antes del contenido */
+.container-fluid>section#proyectos::before {
+    content: "";
+    position: absolute;
+    /* Posiciona el pseudo-elemento de manera absoluta */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(113, 172, 255) 100%);
+    /* Cambia los colores según lo que necesites */
+    z-index: 0;
+    /* Asegura que el pseudo-elemento esté detrás del contenido */
+}
+
+.container-fluid>section#proyectos>* {
+    position: relative;
+    /* Para que el contenido se superponga al fondo desvanecido */
+    z-index: 1;
+    /* Asegura que el contenido esté por encima del fondo desvanecido */
+}
